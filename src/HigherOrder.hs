@@ -16,8 +16,19 @@ data BinTree a =
 -- Define 'product' both using an accumulator explicitly,
 -- and using (strict) foldl'.
 
+-- |
+-- >>> product [1 .. 4]
+-- 24
+--
 product :: Num a => [a] -> a
-product = error "TODO: define product"
+product = error "TODO: define product with an explicit accumulator"
+
+-- |
+-- >>> product [3, 11]
+-- 33
+--
+product' :: Num a => [a] -> a
+product' = error "TODO: define product using foldl'"
 
 -- Task HigherOrder-2.
 --
@@ -35,6 +46,10 @@ reverse = error "TODO: define reverse"
 -- The instance is actually given below. You just
 -- have to uncomment it.
 
+-- |
+-- >>> mapBinTree (+1) (Bin Empty 7 (Bin Empty 8 Empty))
+-- Bin Empty 8 (Bin Empty 9 Empty)
+--
 mapBinTree :: (a -> b) -> BinTree a -> BinTree b
 mapBinTree = error "TODO: define mapBinTree"
 
@@ -88,6 +103,13 @@ insert = error "TODO: define insert"
 -- Hide the original binding from the Prelude by exluding it in
 -- the module header. Provide the type signature yourself.
 
+-- |
+-- >>> all even [2, 4 .. 20]
+-- True
+--
+-- >>> all odd [1, 1, 1, 2, 3, 3]
+-- False
+--
 -- TODO: define all
 
 -- Task HigherOrder-8.
@@ -115,6 +137,13 @@ fromListBST = error "TODO: define fromListBST"
 -- NOTE: This is not easy. Think about this and discuss your
 -- strategy with us before you proceed.
 
+-- |
+-- >>> labelTree $ Bin Empty 'x' (Bin Empty 'y' Empty)
+-- Bin Empty ('x',1) (Bin Empty ('y',2) Empty)
+--
+-- >>> labelTree $ Bin (Bin Empty 1 Empty) 2 (Bin Empty 5 Empty)
+-- Bin (Bin Empty (1,1) Empty) (2,2) (Bin Empty (5,3) Empty)
+--
 labelTree :: BinTree a -> BinTree (a, Int)
 labelTree = error "TODO: define labelTree"
 
@@ -128,6 +157,10 @@ labelTree = error "TODO: define labelTree"
 -- many) labels, so you don't have to return a 'Maybe' if the
 -- list is too short, but can just crash.
 
+-- |
+-- >>> labelTree' (Bin Empty 1 (Bin Empty 42 Empty)) "Haskell"
+-- Bin Empty (1,'H') (Bin Empty (42,'a') Empty)
+--
 labelTree' :: BinTree a -> [b] -> BinTree (a, b)
 labelTree' = error "TODO: define labelTree'"
 
@@ -151,6 +184,10 @@ labelTree' = error "TODO: define labelTree'"
 -- take, and note that not just the list is being traversed,
 -- but also the number changes.
 
+-- |
+-- >>> take 3 "Haskell"
+-- "Has"
+--
 take :: Int -> [a] -> [a]
 take _ []       = []
 take n (x : xs)
@@ -164,6 +201,13 @@ take n (x : xs)
 -- even 'foldl' can be written in terms of 'foldr'.
 --
 -- Try to do this. The approach required is similar.
+
+-- |
+-- >>> myFoldl (\xs x -> xs ++ [x]) [] "Haskell"
+-- "Haskell"
+--
+myFoldl :: (b -> a -> b) -> b -> [a] -> b
+myFoldl = error "TODO: implement myFoldl"
 
 -- Task HigherOrder-15.
 --
