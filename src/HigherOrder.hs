@@ -114,7 +114,7 @@ insert = error "TODO: define insert"
 
 -- Task HigherOrder-8.
 --
--- Import the function 'sortyBy' from the 'Data.List' module.
+-- Import the function 'sortBy' from the 'Data.List' module.
 -- Then use this function to define a function that sorts a
 -- list in descending rather than ascending order.
 
