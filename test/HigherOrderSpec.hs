@@ -9,10 +9,10 @@ module HigherOrderSpec
     ) where
 
 import qualified Control.Monad.State as S
-import           Data.List           (sort, nub)
+import           Data.List           (nub, sort)
 import           Data.Maybe          (fromMaybe)
-import qualified Prelude             as P
 import           Prelude             hiding (product, reverse, take)
+import qualified Prelude             as P
 import           Test.Hspec
 import           Test.QuickCheck
 

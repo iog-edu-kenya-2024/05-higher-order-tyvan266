@@ -1,8 +1,8 @@
 {-# OPTIONS_GHC -Wall -Wno-unused-imports #-}
 module HigherOrder where
 
-import Data.List (foldl')
-import Prelude hiding (take, product, reverse)
+import           Data.List (foldl')
+import           Prelude   hiding (product, reverse, take)
 
 -- These are binary trees with labels in their nodes.
 
