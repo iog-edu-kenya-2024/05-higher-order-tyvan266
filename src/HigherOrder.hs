@@ -189,10 +189,7 @@ labelTree' = error "TODO: define labelTree'"
 -- "Has"
 --
 take :: Int -> [a] -> [a]
-take _ []       = []
-take n (x : xs)
-  | n > 0     = x : take (n - 1) xs
-  | otherwise = []
+take = error "TODO: implement take"
 
 -- Task HigherOrder-14.
 --
